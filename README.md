@@ -83,9 +83,13 @@ Apresentação dos principais indicadores do dataset:
 Análise do perfil sociodemográfico dos clientes.
 
 **Visuais incluídos:**
-- Tabela com número de clientes por profissão — as profissões mais comuns são **blue-collar (9.732)** e **management (9.458)**
-- **Heatmap — Escolaridade vs Empréstimo:** clientes com escolaridade terciária e sem empréstimo apresentam maior taxa de conversão (0,16)
-- **Heatmap — Estado Civil vs Profissão:** clientes solteiros e estudantes destacam-se com uma taxa de conversão de 0,29; reformados divorciados com 0,28
+- Tabela com Nº de Clientes por Profissão — As profissões mais comuns são **blue-collar (9.732)** e **management (9.458)**
+- **Heatmap — Escolaridade vs Empréstimo:** Isto nos diz que os clientes que têm o nivel de educação terciário e que não têm
+emprestimos (16%) são a os clientes que mais adquiriram um novo emprestimo
+- **Heatmap — Estado Civil vs Profissão:** A célula onde se cruza single com student tem o valor 0,29, significa que 29% dos
+clientes solteiros e estudantes compraram o depósito enquanto divorced com retired tem 0,28 ou seja 28% dos reformados
+divorciados também compraram. Estes são os dois perfis que mais se destacam no heatmap, aparecem com a cor mais escura, e são
+portanto os grupos com maior probabilidade de adquirir o produto.
 
 ---
 
