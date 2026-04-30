@@ -100,7 +100,7 @@ portanto os grupos com maior probabilidade de adquirir o produto.
 Exploração das variáveis financeiras e correlações numéricas.
 
 **Visuais incluídos:**
-- Gráfico de dispersão — Idade vs Saldo: Reparamos que 
+- Gráfico de dispersão — Idade vs Saldo: Reparamos que não existe uma relação entre a idade dos clientes com o seu nivel de saldo
 - Gráfico de barras — Média do saldo por posse de casa (quem não tem casa apresenta saldo médio mais elevado, ~1.600€)
 
 **Correlações de Pearson:**
