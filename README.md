@@ -350,6 +350,35 @@ DIVIDE(
 )
 ````
 
+Colunas Calculadas:
+
+Outlier:
+```dax
+  É_Outlier = 
+VAR Tbl = ALL('bank-full'[balance])
+VAR Q1 = PERCENTILEX.INC(Tbl, [balance], 0.25)
+VAR Q3 = PERCENTILEX.INC(Tbl, [balance], 0.75)
+VAR IQR = Q3 - Q1
+VAR LimInf = Q1 - 1.5 * IQR
+VAR LimSup = Q3 + 1.5 * IQR
+RETURN
+IF(
+    'bank-full'[balance] < LimInf || 'bank-full'[balance] > LimSup,
+    "Outlier",
+    "Não Outlier"
+)
+````
+
+Grupo de Contacto:
+```dax
+  Grupo_Contacto = 
+IF(
+    'bank-full'[previous] > 0,
+    "Contactado Antes",
+    "Não Contactado"
+)
+````
+
 ---
 
 ## 🔍 Principais Conclusões
