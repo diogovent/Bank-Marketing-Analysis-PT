@@ -350,7 +350,7 @@ DIVIDE(
 )
 ````
 
-Colunas Calculadas:
+### Colunas Calculadas:
 
 Outlier:
 ```dax
