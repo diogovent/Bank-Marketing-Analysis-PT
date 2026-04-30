@@ -14,11 +14,11 @@ Os dados dizem respeito a campanhas de marketing realizadas por telefone por uma
 
 ## 🎯 Objetivos da Análise
 
-- Compreender o perfil sociodemográfico dos clientes
-- Identificar a relação entre variáveis financeiras e a conversão
-- Analisar outliers no saldo bancário
-- Calcular probabilidades condicionais de compra
-- Verificar correlações entre variáveis numéricas
+- Compreender o Perfil Sociodemográfico dos Clientes
+- Analisar dos Outliers
+- Identificar a Relação entre Variáveis Financeiras e a Conversão
+- Verificar Correlações entre Variáveis Numéricas
+- Calcular Probabilidades Condicionais de Compra
 
 ---
 
@@ -59,7 +59,7 @@ Os dados dizem respeito a campanhas de marketing realizadas por telefone por uma
 
 ### Página 1 — Visão Geral
 
-![Visão Geral](imagens/pagina1_visao_geral.png)
+![Dashboard Preview](https://github.com/diogovent/Bank-Marketing-Analysis-PT/blob/main/1.png)
 
 Apresentação dos principais indicadores do dataset:
 
