@@ -4,6 +4,19 @@
 
 ---
 
+## 📌 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Dataset](#estrutura-do-dataset)
+- [Ferramentas Utilizadas](#ferramentas-utilizadas)
+- [Estrutura do Dashboard](#dashboard--5-páginas)
+- [Medidas DAX e Colunas Calculadas](#medidas-dax-e-colunas-calculadas)
+- [Principais Conclusões](#principais-conclusões)
+- [Recomendações](#recomendações)
+- [Como Visualizar](#como-visualizar)
+
+---
+
 ## 📁 Sobre o Projeto
 
 Este projeto foi desenvolvido com base no dataset **Bank Marketing** do [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
@@ -161,18 +174,29 @@ Análise da probabilidade de compra do depósito a prazo em função de variáve
 ## 🔍 Principais Conclusões
 
 1. **Perfil mais propenso a comprar:** cliente solteiro, estudante ou reformado, com escolaridade terciária e sem empréstimo activo
-2. **O saldo não é determinante** para a conversão — outliers e não-outliers convertem de forma semelhante
-3. **Ter casa própria ou empréstimo reduz a conversão** — possivelmente por já existirem compromissos financeiros
-4. **O contacto prévio é o factor mais relevante** — clientes já abordados têm o dobro da probabilidade de converter
-5. **Maio é o mês com mais contactos** — tanto para outliers como para o conjunto geral
+2. **O saldo não é determinante** para a conversão, outliers e não-outliers convertem de forma semelhante
+3. **Ter casa própria ou empréstimo reduz a conversão**, possivelmente por já existirem compromissos financeiros
+4. **O contacto prévio é o factor mais relevante**, clientes já abordados têm o dobro da probabilidade de converter
+5. **Maio é o mês com mais contactos**, tanto para outliers como para o conjunto geral
+
+---
+
+## 💡 Recomendações
+
+1. **Priorizar clientes já contactados anteriormente** - A probabilidade de conversão é mais do dobro face a clientes sem historial de contacto.
+2. **Focar as campanhas em clientes sem casa própria e sem empréstimo** — Estes perfis apresentam consistentemente taxas de conversão mais elevadas.
+3. **Segmentar por perfil sociodemográfico** — Clientes solteiros, estudantes ou reformados com escolaridade terciária são os mais propensos a adquirir o produto.
+4. **Não descartar clientes com saldos extremos (outliers)** — Estes convertem de forma semelhante aos restantes, pelo que não devem ser excluídos das campanhas.
 
 ---
 
 ## 📌 Como Visualizar
 
 1. Faz o download do ficheiro `.pbix` disponível neste repositório
-2. Abre com o **Power BI Desktop** (gratuito)
-3. Navega pelas 5 páginas do dashboard
+2. Abre no **Power BI Desktop** (gratuito)
+3. Navegue pelas 5 páginas do dashboard
+
+Ou então pode abrir por este link: https://app.powerbi.com/groups/me/reports/ace82cfb-963a-4dd2-9a4c-daff0dc5a562/4d61f9bcc5025a073207?experience=power-bi
 
 ---
 
