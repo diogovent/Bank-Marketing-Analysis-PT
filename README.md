@@ -11,11 +11,11 @@
 - Ferramentas Utilizadas
 - Estrutura do Dataset
 - Dashboard — 5 Páginas
--   Página 1 — Visão Geral
--   Página 2 — Perfil do Cliente
--   Página 3 — Análise Financeira
--   Página 4 — Outliers
--   Página 5 — Conversão
+   Página 1 — Visão Geral
+   Página 2 — Perfil do Cliente
+   Página 3 — Análise Financeira
+   Página 4 — Outliers
+   Página 5 — Conversão
 - Medidas DAX e Colunas Calculadas
 - Principais Conclusões
 - Recomendações
