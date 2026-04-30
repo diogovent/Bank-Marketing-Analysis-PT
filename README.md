@@ -6,14 +6,15 @@
 
 ## 📌 Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Dataset](#estrutura-do-dataset)
-- [Ferramentas Utilizadas](#ferramentas-utilizadas)
-- [Estrutura do Dashboard](#dashboard--5-páginas)
-- [Medidas DAX e Colunas Calculadas](#medidas-dax-e-colunas-calculadas)
-- [Principais Conclusões](#principais-conclusões)
-- [Recomendações](#recomendações)
-- [Como Visualizar](#como-visualizar)
+- [Sobre o Projeto]
+- [Objetivos da Análise]
+- [Dataset]
+- [Ferramentas Utilizadas]
+- [Estrutura do Dashboard]
+- [Medidas DAX e Colunas Calculadas]
+- [Principais Conclusões]
+- [Recomendações]
+- [Como Visualizar]
 
 ---
 
