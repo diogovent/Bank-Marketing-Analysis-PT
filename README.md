@@ -6,15 +6,16 @@
 
 ## 📌 Índice
 
-- [Sobre o Projeto]
-- [Objetivos da Análise]
-- [Dataset]
-- [Ferramentas Utilizadas]
-- [Estrutura do Dashboard]
-- [Medidas DAX e Colunas Calculadas]
-- [Principais Conclusões]
-- [Recomendações]
-- [Como Visualizar]
+- Sobre o Projeto
+- Objetivos da Análise
+- Ferramentas Utilizadas
+- Estrutura do Dataset
+- Dashboard — 5 Páginas:
+-     dsdada
+- Medidas DAX e Colunas Calculadas
+- Principais Conclusões
+- Recomendações
+- Como Visualizar
 
 ---
 
