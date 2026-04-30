@@ -109,8 +109,8 @@ Análise do perfil sociodemográfico dos clientes.
 
 **Visuais incluídos:**
 - Tabela com Nº de Clientes por Profissão — As profissões mais comuns são **blue-collar (9.732)** e **management (9.458)**
-- **Heatmap — Escolaridade vs Empréstimo:** Isto nos diz que os clientes que têm o nivel de educação terciário e que não têm
-emprestimos (16%) são a os clientes que mais adquiriram um novo emprestimo
+- **Heatmap — Escolaridade vs Empréstimo:** Isto nos diz que os clientes que têm o nível de educação terciário e que não têm
+empréstimos (16%) são a os clientes que mais adquiriram um novo emprestimo
 - **Heatmap — Estado Civil vs Profissão:** A célula onde se cruza single com student tem o valor 0,29, significa que 29% dos
 clientes solteiros e estudantes compraram o depósito enquanto divorced com retired tem 0,28 ou seja 28% dos reformados
 divorciados também compraram. Estes são os dois perfis que mais se destacam no heatmap, aparecem com a cor mais escura, e são
@@ -125,7 +125,7 @@ portanto os grupos com maior probabilidade de adquirir o produto.
 Exploração das variáveis financeiras e correlações numéricas.
 
 **Visuais incluídos:**
-- Gráfico de dispersão — Idade vs Saldo: Reparamos que não existe uma relação entre a idade dos clientes com o seu nivel de saldo
+- Gráfico de dispersão — Idade vs Saldo: Reparamos que não existe uma relação entre a idade dos clientes com o seu nível de saldo
 - Gráfico de barras — Média do saldo por posse de casa (quem não tem casa apresenta saldo médio mais elevado, ~1.600€)
 
 **Correlações de Pearson:**
@@ -206,7 +206,7 @@ CALCULATE(
 ````
 Nota: Para os sem casa no "yes" pus "no"
 
-Clientes com Emprestimos:
+Clientes com Empréstimo:
 ```dax
   Com_Emprestimo = 
 CALCULATE(
@@ -214,7 +214,7 @@ CALCULATE(
     'bank-full'[loan] = "yes"
 )
 ````
-Nota: Para os sem emprestimos no "yes" pus "no"
+Nota: Para os sem Empréstimos no "yes" pus "no"
 
 Clientes com Inadimplência:
 ```dax
@@ -332,7 +332,7 @@ RETURN
     DIVIDE(Num, Den)
 ````
 
-Percentagem de Compra por Mes:
+Percentagem de Compra por Mês:
 ```dax
   Percentagem_Mes = 
 DIVIDE(
