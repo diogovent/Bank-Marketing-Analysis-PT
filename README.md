@@ -1,4 +1,4 @@
-# 📊 Bank Marketing Analysis — Power BI Dashboard
+# 📊 Bank Marketing Analysis (PT) — Power BI Dashboard
 
 > Análise exploratória de dados de campanhas de marketing de um banco português, com foco na conversão de depósitos a prazo.
 
