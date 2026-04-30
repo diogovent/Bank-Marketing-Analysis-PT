@@ -188,17 +188,17 @@ Análise da probabilidade de compra do depósito a prazo em função de variáve
 ### Medidas
 Total de Clientes:
 ```dax
-  - Total_Clientes = FORMAT(COUNTROWS('bank-full'), "#,0")
+  Total_Clientes = FORMAT(COUNTROWS('bank-full'), "#,0")
 ````
 
 Total de Outliers:
 ```dax
-  - Total de Outliers = CALCULATE(COUNTROWS('bank-full'), 'bank-full'[É_Outlier] = "Outlier")
+  Total de Outliers = CALCULATE(COUNTROWS('bank-full'), 'bank-full'[É_Outlier] = "Outlier")
 ````
 
 Clientes com Casa:
 ```dax
-  - Com_Casa = 
+  Com_Casa = 
 CALCULATE(
     COUNTROWS('bank-full'),
     'bank-full'[housing] = "yes"
@@ -208,7 +208,7 @@ Nota: Para os sem casa no "yes" pus "no"
 
 Clientes com Emprestimos:
 ```dax
-  - Com_Emprestimo = 
+  Com_Emprestimo = 
 CALCULATE(
     COUNTROWS('bank-full'),
     'bank-full'[loan] = "yes"
@@ -218,7 +218,7 @@ Nota: Para os sem emprestimos no "yes" pus "no"
 
 Clientes com Inadimplência:
 ```dax
-  - Com_Inadimplência = 
+  Com_Inadimplência = 
 CALCULATE(
     COUNTROWS('bank-full'),
     'bank-full'[default] = "yes"
@@ -228,7 +228,7 @@ Nota: Para os sem inadimplência no "yes" pus "no"
 
 Contactados Antes:
 ```dax
-  - Contactados_Antes = 
+  Contactados_Antes = 
 CALCULATE(
     COUNTROWS('bank-full'),
     'bank-full'[previous] > 0
@@ -237,7 +237,7 @@ CALCULATE(
 
 Taxa de Conversão:
 ```dax
-  - Taxa_Conversao = 
+  Taxa_Conversao = 
 DIVIDE(
     CALCULATE(COUNTROWS('bank-full'), 'bank-full'[y] = "yes"),
     COUNTROWS('bank-full')
@@ -246,7 +246,7 @@ DIVIDE(
 
 Pearson Correlação (Balanço vs Duração):
 ```dax
-  - Pearson_Corr(Balanço_Duração) = 
+  Pearson_Corr(Balanço_Duração) = 
 VAR T =
     FILTER(
         ALLSELECTED('bank-full'),
@@ -268,7 +268,7 @@ RETURN
 
 Pearson Correlação (Campanha vs Previous):
 ```dax
-  - Pearson_Corr(Campanha_Previous) = 
+  Pearson_Corr(Campanha_Previous) = 
 VAR T =
     FILTER(
         ALLSELECTED('bank-full'),
@@ -290,7 +290,7 @@ RETURN
 
 Pearson Correlação (Idade vs Balanço):
 ```dax
-  - Pearson_Corr(Idade_Balanço) = 
+  Pearson_Corr(Idade_Balanço) = 
 VAR T =
     FILTER(
         ALLSELECTED('bank-full'),
@@ -312,7 +312,7 @@ RETURN
 
 Pearson Correlação (Idade vs Duração):
 ```dax
-  - Pearson_Corr(Idade_Duração) = 
+  Pearson_Corr(Idade_Duração) = 
 VAR T =
     FILTER(
         ALLSELECTED('bank-full'),
@@ -334,7 +334,7 @@ RETURN
 
 Percentagem de Compra por Mes:
 ```dax
-  - Percentagem_Mes = 
+  Percentagem_Mes = 
 DIVIDE(
     COUNTROWS('bank-full'),
     CALCULATE(COUNTROWS('bank-full'), ALLEXCEPT('bank-full', 'bank-full'[É_Outlier]))
@@ -343,7 +343,7 @@ DIVIDE(
 
 Probabilidade de Compra:
 ```dax
-  - Probabilidade_Compra = 
+  Probabilidade_Compra = 
 DIVIDE(
     CALCULATE(COUNTROWS('bank-full'), 'bank-full'[y] = "yes"),
     COUNTROWS('bank-full')
