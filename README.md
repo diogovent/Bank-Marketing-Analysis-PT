@@ -183,6 +183,175 @@ Análise da probabilidade de compra do depósito a prazo em função de variáve
 
 ---
 
+## 🧮 Medidas DAX e Colunas Calculadas
+
+### Medidas
+Total de Clientes:
+```dax
+  - Total_Clientes = FORMAT(COUNTROWS('bank-full'), "#,0")
+````
+
+Total de Outliers:
+```dax
+  - Total de Outliers = CALCULATE(COUNTROWS('bank-full'), 'bank-full'[É_Outlier] = "Outlier")
+````
+
+Clientes com Casa:
+```dax
+  - Com_Casa = 
+CALCULATE(
+    COUNTROWS('bank-full'),
+    'bank-full'[housing] = "yes"
+)
+````
+Nota: Para os sem casa no "yes" pus "no"
+
+Clientes com Emprestimos:
+```dax
+  - Com_Emprestimo = 
+CALCULATE(
+    COUNTROWS('bank-full'),
+    'bank-full'[loan] = "yes"
+)
+````
+Nota: Para os sem emprestimos no "yes" pus "no"
+
+Clientes com Inadimplência:
+```dax
+  - Com_Inadimplência = 
+CALCULATE(
+    COUNTROWS('bank-full'),
+    'bank-full'[default] = "yes"
+)
+````
+Nota: Para os sem inadimplência no "yes" pus "no"
+
+Contactados Antes:
+```dax
+  - Contactados_Antes = 
+CALCULATE(
+    COUNTROWS('bank-full'),
+    'bank-full'[previous] > 0
+)
+````
+
+Taxa de Conversão:
+```dax
+  - Taxa_Conversao = 
+DIVIDE(
+    CALCULATE(COUNTROWS('bank-full'), 'bank-full'[y] = "yes"),
+    COUNTROWS('bank-full')
+)
+````
+
+Pearson Correlação (Balanço vs Duração):
+```dax
+  - Pearson_Corr(Balanço_Duração) = 
+VAR T =
+    FILTER(
+        ALLSELECTED('bank-full'),
+        NOT ISBLANK('bank-full'[balance]) &&
+        NOT ISBLANK('bank-full'[duration])
+    )
+VAR MediaX = AVERAGEX(T, 'bank-full'[balance])
+VAR MediaY = AVERAGEX(T, 'bank-full'[duration])
+VAR Num =
+    SUMX(T, ('bank-full'[balance] - MediaX) * ('bank-full'[duration] - MediaY))
+VAR Den =
+    SQRT(
+        SUMX(T, POWER('bank-full'[balance] - MediaX, 2)) *
+        SUMX(T, POWER('bank-full'[duration] - MediaY, 2))
+    )
+RETURN
+    DIVIDE(Num, Den)
+````
+
+Pearson Correlação (Campanha vs Previous):
+```dax
+  - Pearson_Corr(Campanha_Previous) = 
+VAR T =
+    FILTER(
+        ALLSELECTED('bank-full'),
+        NOT ISBLANK('bank-full'[campaign]) &&
+        NOT ISBLANK('bank-full'[previous])
+    )
+VAR MediaX = AVERAGEX(T, 'bank-full'[campaign])
+VAR MediaY = AVERAGEX(T, 'bank-full'[previous])
+VAR Num =
+    SUMX(T, ('bank-full'[campaign] - MediaX) * ('bank-full'[previous] - MediaY))
+VAR Den =
+    SQRT(
+        SUMX(T, POWER('bank-full'[campaign] - MediaX, 2)) *
+        SUMX(T, POWER('bank-full'[previous] - MediaY, 2))
+    )
+RETURN
+    DIVIDE(Num, Den)
+````
+
+Pearson Correlação (Idade vs Balanço):
+```dax
+  - Pearson_Corr(Idade_Balanço) = 
+VAR T =
+    FILTER(
+        ALLSELECTED('bank-full'),
+        NOT ISBLANK('bank-full'[age]) &&
+        NOT ISBLANK('bank-full'[balance])
+    )
+VAR MediaX = AVERAGEX(T, 'bank-full'[age])
+VAR MediaY = AVERAGEX(T, 'bank-full'[balance])
+VAR Num =
+    SUMX(T, ('bank-full'[age] - MediaX) * ('bank-full'[balance] - MediaY))
+VAR Den =
+    SQRT(
+        SUMX(T, POWER('bank-full'[age] - MediaX, 2)) *
+        SUMX(T, POWER('bank-full'[balance] - MediaY, 2))
+    )
+RETURN
+    DIVIDE(Num, Den)
+````
+
+Pearson Correlação (Idade vs Duração):
+```dax
+  - Pearson_Corr(Idade_Duração) = 
+VAR T =
+    FILTER(
+        ALLSELECTED('bank-full'),
+        NOT ISBLANK('bank-full'[age]) &&
+        NOT ISBLANK('bank-full'[duration])
+    )
+VAR MediaX = AVERAGEX(T, 'bank-full'[age])
+VAR MediaY = AVERAGEX(T, 'bank-full'[duration])
+VAR Num =
+    SUMX(T, ('bank-full'[age] - MediaX) * ('bank-full'[duration] - MediaY))
+VAR Den =
+    SQRT(
+        SUMX(T, POWER('bank-full'[age] - MediaX, 2)) *
+        SUMX(T, POWER('bank-full'[duration] - MediaY, 2))
+    )
+RETURN
+    DIVIDE(Num, Den)
+````
+
+Percentagem de Compra por Mes:
+```dax
+  - Percentagem_Mes = 
+DIVIDE(
+    COUNTROWS('bank-full'),
+    CALCULATE(COUNTROWS('bank-full'), ALLEXCEPT('bank-full', 'bank-full'[É_Outlier]))
+)
+````
+
+Probabilidade de Compra:
+```dax
+  - Probabilidade_Compra = 
+DIVIDE(
+    CALCULATE(COUNTROWS('bank-full'), 'bank-full'[y] = "yes"),
+    COUNTROWS('bank-full')
+)
+````
+
+---
+
 ## 🔍 Principais Conclusões
 
 1. **Perfil mais propenso a comprar:** cliente solteiro, estudante ou reformado, com escolaridade terciária e sem empréstimo activo
