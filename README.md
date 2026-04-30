@@ -1,1 +1,181 @@
-# Bank-Marketing-Analysis-PT-
+# 📊 Bank Marketing Analysis — Power BI Dashboard
+
+> Análise exploratória de dados de campanhas de marketing de um banco português, com foco na conversão de depósitos a prazo.
+
+---
+
+## 📁 Sobre o Projeto
+
+Este projeto foi desenvolvido com base no dataset **Bank Marketing** do [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
+
+Os dados dizem respeito a campanhas de marketing realizadas por telefone por uma instituição bancária portuguesa. O objetivo principal é compreender o perfil dos clientes e identificar os fatores que influenciam a aquisição de um **depósito a prazo bancário** (variável `y`).
+
+---
+
+## 🎯 Objetivos da Análise
+
+- Compreender o perfil sociodemográfico dos clientes
+- Identificar a relação entre variáveis financeiras e a conversão
+- Analisar outliers no saldo bancário
+- Calcular probabilidades condicionais de compra
+- Verificar correlações entre variáveis numéricas
+
+---
+
+## 🛠️ Ferramentas Utilizadas
+
+| Ferramenta | Utilização |
+|---|---|
+| **Power BI Desktop** | Construção do dashboard e visualizações |
+| **DAX** | Criação de medidas e colunas calculadas |
+| **UCI ML Repository** | Fonte dos dados |
+
+---
+
+## 📂 Estrutura do Dataset
+
+| Variável | Tipo | Descrição |
+|---|---|---|
+| `age` | Numérica | Idade do cliente |
+| `job` | Categórica | Profissão |
+| `marital` | Categórica | Estado civil |
+| `education` | Categórica | Nível de escolaridade |
+| `default` | Binária | Incumprimento (yes/no) |
+| `balance` | Numérica | Saldo bancário médio anual |
+| `housing` | Binária | Possui casa própria (yes/no) |
+| `loan` | Binária | Possui empréstimo pessoal (yes/no) |
+| `contact` | Categórica | Tipo de contacto |
+| `month` | Categórica | Mês do último contacto |
+| `duration` | Numérica | Duração da chamada (em segundos) |
+| `campaign` | Numérica | Nº de contactos nesta campanha |
+| `previous` | Numérica | Nº de contactos em campanhas anteriores |
+| `y` | Binária | **Variável alvo** — adquiriu o depósito? |
+
+> ⚠️ Este dataset utiliza **ponto e vírgula** como separador no ficheiro CSV.
+
+---
+
+## 📊 Dashboard — 5 Páginas
+
+### Página 1 — Visão Geral
+
+![Visão Geral](imagens/pagina1_visao_geral.png)
+
+Apresentação dos principais indicadores do dataset:
+
+| Indicador | Valor |
+|---|---|
+| Total de Clientes | 45.211 |
+| Taxa de Conversão | 11,7% |
+| Idade Média | 41 anos |
+| Saldo Médio | 1.362,27 € |
+
+**Visuais incluídos:**
+- Gráfico de violino — distribuição de idades por profissão
+- Gráfico circular — tipo de contacto utilizado (cellular 64,77% / unknown 28,8% / telephone 6,43%)
+
+---
+
+### Página 2 — Perfil do Cliente
+
+![Perfil do Cliente](imagens/pagina2_perfil.png)
+
+Análise do perfil sociodemográfico dos clientes.
+
+**Visuais incluídos:**
+- Tabela com número de clientes por profissão — as profissões mais comuns são **blue-collar (9.732)** e **management (9.458)**
+- **Heatmap — Escolaridade vs Empréstimo:** clientes com escolaridade terciária e sem empréstimo apresentam maior taxa de conversão (0,16)
+- **Heatmap — Estado Civil vs Profissão:** clientes solteiros e estudantes destacam-se com uma taxa de conversão de 0,29; reformados divorciados com 0,28
+
+---
+
+### Página 3 — Análise Financeira
+
+![Análise Financeira](imagens/pagina3_financeira.png)
+
+Exploração das variáveis financeiras e correlações numéricas.
+
+**Visuais incluídos:**
+- Gráfico de dispersão — Idade vs Saldo
+- Gráfico de barras — Média do saldo por posse de casa (quem não tem casa apresenta saldo médio mais elevado, ~1.600€)
+
+**Correlações de Pearson:**
+
+| Par de Variáveis | Coeficiente | Interpretação |
+|---|---|---|
+| Idade / Saldo | 0,10 | Correlação muito fraca |
+| Idade / Duração | 0,00 | Sem correlação |
+| Saldo / Duração | 0,02 | Sem correlação relevante |
+| Campanha / Previous | -0,03 | Sem correlação relevante |
+
+> 💡 Nenhuma das variáveis numéricas apresenta correlação linear forte entre si.
+
+---
+
+### Página 4 — Outliers
+
+![Outliers](imagens/pagina4_outliers.png)
+
+Identificação e análise dos outliers na variável `balance` através do **método IQR (Interquartil)**.
+
+**Método utilizado:**
+
+**Resultados:**
+- Total de outliers identificados: **526 clientes**
+- A proporção de clientes que adquiriram o depósito é **semelhante** entre outliers (~13%) e não-outliers (~11,5%)
+- A média de idades é praticamente igual entre os dois grupos (~41 anos)
+- O mês de **maio** concentra a maior proporção de contactos em ambos os grupos
+
+---
+
+### Página 5 — Conversão
+
+![Conversão](imagens/pagina5_conversao.png)
+
+Análise da probabilidade de compra do depósito a prazo em função de variáveis binárias e do historial de contacto.
+
+**Principais conclusões:**
+
+| Grupo | Taxa de Conversão (yes) |
+|---|---|
+| Sem casa própria | 16,7% |
+| Com casa própria | 7,7% |
+| Sem empréstimo | 12,66% |
+| Com empréstimo | 6,68% |
+| Sem incumprimento | 11,8% |
+| Com incumprimento | 6,38% |
+
+**Probabilidade Condicional:**
+- Clientes **contactados anteriormente** (`previous > 0`): **~23% de probabilidade** de compra
+- Clientes **nunca contactados**: **~9% de probabilidade** de compra
+- Total de clientes com contacto anterior: **8.257**
+
+> 💡 Ter sido contactado em campanhas anteriores **mais do que duplica** a probabilidade de aquisição do produto.
+
+---
+
+## 🔍 Principais Conclusões
+
+1. **Perfil mais propenso a comprar:** cliente solteiro, estudante ou reformado, com escolaridade terciária e sem empréstimo activo
+2. **O saldo não é determinante** para a conversão — outliers e não-outliers convertem de forma semelhante
+3. **Ter casa própria ou empréstimo reduz a conversão** — possivelmente por já existirem compromissos financeiros
+4. **O contacto prévio é o factor mais relevante** — clientes já abordados têm o dobro da probabilidade de converter
+5. **Maio é o mês com mais contactos** — tanto para outliers como para o conjunto geral
+
+---
+
+## 📌 Como Visualizar
+
+1. Faz o download do ficheiro `.pbix` disponível neste repositório
+2. Abre com o **Power BI Desktop** (gratuito)
+3. Navega pelas 5 páginas do dashboard
+
+---
+
+## 👤 Autor
+
+Desenvolvido como projecto de análise de dados para portfólio pessoal.
+
+---
+
+*Dataset original: [UCI Machine Learning Repository — Bank Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)*
