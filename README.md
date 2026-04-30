@@ -355,9 +355,13 @@ DIVIDE(
 ## 🔍 Principais Conclusões
 
 1. **Perfil mais propenso a comprar:** cliente solteiro, estudante ou reformado, com escolaridade terciária e sem empréstimo activo
+   
 2. **O saldo não é determinante** para a conversão, outliers e não-outliers convertem de forma semelhante
+   
 3. **Ter casa própria ou empréstimo reduz a conversão**, possivelmente por já existirem compromissos financeiros
+   
 4. **O contacto prévio é o factor mais relevante**, clientes já abordados têm o dobro da probabilidade de converter
+   
 5. **Maio é o mês com mais contactos**, tanto para outliers como para o conjunto geral
 
 ---
@@ -365,9 +369,13 @@ DIVIDE(
 ## 💡 Recomendações
 
 1. **Priorizar clientes já contactados anteriormente** - A probabilidade de conversão é mais do dobro face a clientes sem historial de contacto.
+   
 2. **Focar as campanhas em clientes sem casa própria e sem empréstimo** — Estes perfis apresentam consistentemente taxas de conversão mais elevadas.
+   
 3. **Segmentar por perfil sociodemográfico** — Clientes solteiros, estudantes ou reformados com escolaridade terciária são os mais propensos a adquirir o produto.
+   
 4. **Não descartar clientes com saldos extremos (outliers)** — Estes convertem de forma semelhante aos restantes, pelo que não devem ser excluídos das campanhas.
+   
 
 ---
 
