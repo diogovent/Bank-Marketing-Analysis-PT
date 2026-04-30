@@ -78,7 +78,7 @@ Apresentação dos principais indicadores do dataset:
 
 ### Página 2 — Perfil do Cliente
 
-![Perfil do Cliente](imagens/pagina2_perfil.png)
+![Dashboard Preview](https://github.com/diogovent/Bank-Marketing-Analysis-PT/blob/main/2.png)
 
 Análise do perfil sociodemográfico dos clientes.
 
@@ -91,7 +91,7 @@ Análise do perfil sociodemográfico dos clientes.
 
 ### Página 3 — Análise Financeira
 
-![Análise Financeira](imagens/pagina3_financeira.png)
+![Dashboard Preview](https://github.com/diogovent/Bank-Marketing-Analysis-PT/blob/main/3.png)
 
 Exploração das variáveis financeiras e correlações numéricas.
 
@@ -114,7 +114,7 @@ Exploração das variáveis financeiras e correlações numéricas.
 
 ### Página 4 — Outliers
 
-![Outliers](imagens/pagina4_outliers.png)
+![Dashboard Preview](https://github.com/diogovent/Bank-Marketing-Analysis-PT/blob/main/4.png)
 
 Identificação e análise dos outliers na variável `balance` através do **método IQR (Interquartil)**.
 
@@ -130,7 +130,7 @@ Identificação e análise dos outliers na variável `balance` através do **mé
 
 ### Página 5 — Conversão
 
-![Conversão](imagens/pagina5_conversao.png)
+![Dashboard Preview](https://github.com/diogovent/Bank-Marketing-Analysis-PT/blob/main/5.png)
 
 Análise da probabilidade de compra do depósito a prazo em função de variáveis binárias e do historial de contacto.
 
