@@ -110,7 +110,7 @@ Análise do perfil sociodemográfico dos clientes.
 **Visuais incluídos:**
 - Tabela com Nº de Clientes por Profissão — As profissões mais comuns são **blue-collar (9.732)** e **management (9.458)**
 - **Heatmap — Escolaridade vs Empréstimo:** Isto nos diz que os clientes que têm o nível de educação terciário e que não têm
-empréstimos (16%) são a os clientes que mais adquiriram um novo emprestimo
+empréstimos (16%) são a os clientes que mais adquiriram o depósito a prazo
 - **Heatmap — Estado Civil vs Profissão:** A célula onde se cruza single com student tem o valor 0,29, significa que 29% dos
 clientes solteiros e estudantes compraram o depósito enquanto divorced com retired tem 0,28 ou seja 28% dos reformados
 divorciados também compraram. Estes são os dois perfis que mais se destacam no heatmap, aparecem com a cor mais escura, e são
@@ -148,6 +148,8 @@ Exploração das variáveis financeiras e correlações numéricas.
 Identificação e análise dos outliers na variável `balance` através do **método IQR (Interquartil)**.
 
 **Método utilizado:**
+
+O metodo pode ser visto nas Medidas DAX e Colunas Calculadas na parte das Coluna e onde diz "Outlier"
 
 **Resultados:**
 - Total de outliers identificados: **526 clientes**
