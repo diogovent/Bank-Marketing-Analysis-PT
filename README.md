@@ -416,7 +416,7 @@ IF(
 2. Abre no **Power BI Desktop** (gratuito)
 3. Navegue pelas 5 páginas do dashboard
 
-Ou então pode abrir por este link: https://app.powerbi.com/groups/me/reports/ace82cfb-963a-4dd2-9a4c-daff0dc5a562/4d61f9bcc5025a073207?experience=power-bi
+Ou então pode aceder por este link: https://app.powerbi.com/groups/me/reports/ace82cfb-963a-4dd2-9a4c-daff0dc5a562/4d61f9bcc5025a073207?experience=power-bi
 
 ---
 
